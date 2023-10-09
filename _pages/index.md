@@ -5,17 +5,23 @@ id: home
 permalink: /
 ---
 
-# Welcome! 🌱
+# Hi, I'm Sergio! 🌱
 
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
+Welcome to my public notebook. I write and share notes here.
 
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
+I'm using a Jekyll template available on GitHub [here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
 
-The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll).
+My notes may be written in English or Spanish, like below.
 
-<strong>Recently updated notes</strong>
+# <i>Hola, ¡Soy Sergio!</i> 🌵
+
+<i>Bienvenido a mi cuaderno público. Escribo y comparto notas aquí.</i>
+
+<i>Utilizo una plantilla de Jekyll disponible en GitHub [aquí](https://github.com/maximevaillancourt/digital-garden-jekyll-template).</i>
+
+<i>Mis notas pueden estar escritas en inglés o español, como arriba.</i>
+
+<strong>Recently updated notes - <i>Últimas notas</i></strong>
 
 <ul>
   {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
