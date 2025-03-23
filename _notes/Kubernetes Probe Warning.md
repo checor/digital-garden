@@ -1,5 +1,5 @@
 ---
-title: "Alerta en Kubernetes - Readiness Probe Warning: Probe terminated redirects"
+title: "Readiness Probe Warning: Probe terminated redirects"
 ---
 Recientemente, me encontré con este problema en Kubernetes, al revisar los eventos que ocurren en mi cluster:
 
@@ -13,7 +13,7 @@ Como podemos leer, nos marca una alerta relacionada con una redirección, y un *
 Sabiendo esto, me puse a revisar que petición se hace para validar su disponibilidad:
 
 ```bash
-$ kubectl describe pod-899f548bc-rffxw | grep Readiness:
+$ kubectl describe pod-6899f548bc-rffxw | grep Readiness:
 http://:3000/robots.txt
 ```
 
