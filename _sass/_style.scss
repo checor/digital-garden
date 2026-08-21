@@ -56,7 +56,7 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   font-size: 1rem;
-  max-width: 42em;
+  max-width: clamp(42em, 60vw, 70em);
 
   @media (min-width: 820px) {
     font-size: 1.15rem;
