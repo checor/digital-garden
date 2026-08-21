@@ -13,7 +13,7 @@ I'm using a Jekyll template available on GitHub [here](https://github.com/maxime
 
 My notes may be written in English or Spanish, like below.
 
-All of my note are free from AI. Content may contain AI if stated explicitly.
+All of my notes are free from AI. Content may contain AI if stated explicitly.
 
 # <i>Hola, ¡Soy Sergio!</i> 🌵
 
