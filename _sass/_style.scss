@@ -1,39 +1,81 @@
-$color-primary: hsl(0, 0%, 10%);
-$color-text: hsl(0, 0%, 20%);
-$color-subtext: hsl(0, 0%, 30%);
-$color-border: hsl(0, 0%, 85%);
-$color-box-background: mix($color-primary, white, 4%);
-$border-radius: 4px;
-$font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-  sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$border-radius: 6px;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+  "Liberation Mono", monospace;
+
+:root {
+  color-scheme: light dark;
+
+  --color-bg: hsl(0, 0%, 100%);
+  --color-text: hsl(0, 0%, 20%);
+  --color-heading: hsl(0, 0%, 10%);
+  --color-subtext: hsl(0, 0%, 40%);
+  --color-border: hsl(0, 0%, 85%);
+  --color-box-bg: hsl(0, 0%, 96%);
+  --color-code-bg: hsl(0, 0%, 95%);
+  --color-accent: hsl(244, 61%, 68%);
+  --color-accent-bg: hsl(244, 100%, 97%);
+  --color-hover-bg: hsl(38, 100%, 95%);
+  --color-focus-bg: hsl(38, 100%, 88%);
+  --color-link: hsl(0, 0%, 10%);
+  --color-external-icon: hsl(0, 0%, 65%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: hsl(0, 0%, 11%);
+    --color-text: hsl(0, 0%, 85%);
+    --color-heading: hsl(0, 0%, 96%);
+    --color-subtext: hsl(0, 0%, 65%);
+    --color-border: hsl(0, 0%, 26%);
+    --color-box-bg: hsl(0, 0%, 16%);
+    --color-code-bg: hsl(0, 0%, 16%);
+    --color-accent: hsl(244, 75%, 78%);
+    --color-accent-bg: hsl(244, 30%, 20%);
+    --color-hover-bg: hsl(38, 40%, 22%);
+    --color-focus-bg: hsl(38, 55%, 30%);
+    --color-link: hsl(0, 0%, 96%);
+    --color-external-icon: hsl(0, 0%, 50%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg);
+}
 
 body {
-  box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
   line-height: 1.7;
-  padding: 4vh 6vw;
-  overflow-x: hidden;
-  color: $color-text;
+  padding: 5vh 6vw 4vh;
+  color: var(--color-text);
+  background: var(--color-bg);
   font-size: 1rem;
-  max-width: 63em;
+  max-width: 42em;
 
   @media (min-width: 820px) {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 
 time {
   display: block;
-  color: $color-subtext;
+  color: var(--color-subtext);
+  font-size: 0.85em;
   margin: 0.5em 0 1em;
 }
 
 footer {
-  margin: 2em 0;
-  font-size: 0.8em;
-  color: mix($color-text, white, 80%);
-  padding-top: 1em;
+  margin: 3em 0 1em;
+  font-size: 0.85em;
+  color: var(--color-subtext);
+  padding-top: 1.5em;
+  border-top: 1px solid var(--color-border);
 }
 
 img {
@@ -45,10 +87,11 @@ img {
 }
 
 blockquote {
-  padding: 1.5em;
-  margin: 0;
-  font-size: 0.88em;
-  background: $color-box-background;
+  padding: 1.25em 1.5em;
+  margin: 1.5em 0;
+  font-size: 0.92em;
+  color: var(--color-subtext);
+  background: var(--color-box-bg);
   border-radius: $border-radius;
 
   p {
@@ -60,8 +103,8 @@ hr {
   width: 100%;
   border: 0;
   height: 1px;
-  margin: 1.5em 0;
-  background: $color-border;
+  margin: 2em 0;
+  background: var(--color-border);
 }
 
 h1,
@@ -70,28 +113,32 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--color-heading);
   line-height: 1.3;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 a {
-  transition: background 300ms;
+  transition: background 150ms, color 150ms;
   padding: 0 0.1em;
   text-decoration: none;
-  border-bottom: 1px solid $color-border;
-  color: $color-primary;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-link);
+
   &:hover {
-    color: black !important;
-    background: #fffaf1;
+    color: var(--color-heading) !important;
+    background: var(--color-hover-bg);
   }
+
   &:after {
     position: relative;
     top: -0.5em;
     font-size: 0.7em;
     content: "↗";
-    color: #aaaaaa;
+    color: var(--color-external-icon);
   }
+
   &.internal-link:after,
   &.footnote:after,
   &.reversefootnote:after {
@@ -100,12 +147,13 @@ a {
 }
 
 *:focus {
-  background: #ffe8bc !important;
-  color: black !important;
+  background: var(--color-focus-bg) !important;
+  color: var(--color-heading) !important;
 }
 
 nav {
   margin: 1em 0 3em;
+  font-size: 0.95em;
 }
 
 #notes-entry-container {
@@ -122,29 +170,31 @@ nav {
 }
 
 .backlink-box {
-  background: $color-box-background;
+  background: var(--color-box-bg);
   padding: 1em;
   border-radius: $border-radius;
 }
 
 code {
-  background: #f5f5f5;
-  padding: 0.1em 0.2em;
+  font-family: $font-family-mono;
+  background: var(--color-code-bg);
+  padding: 0.15em 0.35em;
   border-radius: 4px;
+  font-size: 0.9em;
 }
 
 .invalid-link {
-  color: #444444;
+  color: var(--color-subtext);
   cursor: help;
-  background: #fafafa;
+  background: var(--color-box-bg);
   padding: 0 0.1em;
 }
 
 .invalid-link-brackets {
-  color: #ccc;
+  color: var(--color-border);
   cursor: help;
 }
 
-.flex-center { 
-  justify-content: center; 
-}  
+.flex-center {
+  justify-content: center;
+}
