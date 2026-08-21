@@ -13,6 +13,8 @@ I'm using a Jekyll template available on GitHub [here](https://github.com/maxime
 
 My notes may be written in English or Spanish, like below.
 
+All of my note are free from AI. Content may contain AI if stated explicitly.
+
 # <i>Hola, ¡Soy Sergio!</i> 🌵
 
 <i>Bienvenido a mi cuaderno público. Escribo y comparto notas aquí.</i>
@@ -20,6 +22,8 @@ My notes may be written in English or Spanish, like below.
 <i>Utilizo una plantilla de Jekyll disponible en GitHub [aquí](https://github.com/maximevaillancourt/digital-garden-jekyll-template).</i>
 
 <i>Mis notas pueden estar escritas en inglés o español, como arriba.</i>
+
+<i>Todo contenido de mi sitio es libre de IA, a menos que se indique explícitamente</i>
 
 <strong>Recently updated notes - <i>Últimas notas</i></strong>
 
